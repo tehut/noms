@@ -20,23 +20,24 @@ function getDate(){
 }
 
 
-function parseResponse (offset, nameArray, truckValues, data = null) {
+function parseResponse (offset, nameArray, truckValues, data=null)  {
   // if parseResponse is being called for the first time parse data into structures
-    if (data != null) {
-      for (truck in data) {
+    if (data !== null) {
+      for ( truck in data) {
+
         let name = data[truck].applicant;
         // scrub results for duplicates and whether they're open and push into nameArray
         // make named object with data body, named for, well, name of course :-D
         if ( hour >= parseInt(data[truck].start24) &&
         hour <= parseInt(data[truck].end24) &&
-        nameArray.includes(name)==false);
+        nameArray.includes(name) == false)
         {
-          nameArray.push(name);
-          truckValues[name] = data[truck];
+          nameArray.push(name)
+          truckValues[name] = data[truck]
         }
       }
-      nameArray = nameArray.sort();
-  }
+      nameArray = nameArray.sort()
+    }
 
 // set ending index to starting index +10 unless there
 // are less than 10 food trucks remaining
@@ -47,7 +48,7 @@ function parseResponse (offset, nameArray, truckValues, data = null) {
     let data = truckValues[name];
     let ord = i + 1;
     let indent = "    ";
-    
+
     // colored console output should read:
     // [Business Name]  Located at: [Location ]
     //                  Open From:  [startime] -  [endtime]
@@ -59,7 +60,7 @@ function parseResponse (offset, nameArray, truckValues, data = null) {
   }
 // handle end of list case
   if (limit !== nameArray.length) {
-    log(chalk.white("\n Would you like to see 10 more food trucks?  y/n ?"));
+    log(chalk.white("\n Would you like to see 10 more food trucks?  y/n ?"))
   } else {
     log(chalk.white("\n Thank you and have a wonderful day!"));
     process.exit();
@@ -101,14 +102,13 @@ function callAPI() {
 
     request(options)
     .then((data) => {
-      parseResponse(offset, nameArray, truckValues, data);
+      parseResponse(offset, nameArray, truckValues, data)
     })
     .then( () => {
-      getInput();
+      getInput()
     })
-
     .catch((error) => {
-      return new Error(error);
+      return new Error(error)
     })
   }
 
@@ -121,18 +121,18 @@ function getInput(map){
   });
   // begins stream
   rl.prompt();
-  
+
 // handles [Enter key]
   rl.on("line", function(line) {
     let answer = line.trim();
     if (answer === "n" || answer === "no" ||
-    answer === "No" || answer === "NO")
+        answer === "No" || answer === "NO")
     {
       console.log("Have a great meal!")
       escape = true;
       process.exit(0);
     } else if (answer === "y" || answer === "yes" ||
-    answer === "Yes" || answer === "YES")
+              answer === "Yes" || answer === "YES")
     {
       offset += 10;
       parseResponse(offset,nameArray, truckValues);

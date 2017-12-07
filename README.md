@@ -1,15 +1,15 @@
 # Noms: a simple CLI to list food trucks in San Fransisco
 
-This is a single file command line application which queries the San Fransicso Mobile Food Truck schedule to return food trucks open at the time of use.
+This is a single file command line application which queries the San Fransisco Mobile Food Truck schedule to return food trucks open at the time of use.
 ## Getting Started
 
-This project is not indented for deployment, the instructions below will get you a copy of the project up and running on your local machine.
+This project is not intended for deployment, the instructions below will get you a copy of the project up and running on your local machine.
 
 ## Prerequistes & Dependences
 ### Prerequistes
 Node 8.0 ^
 Node 9.2 (recommended)
-This application makes use of the Readline module and Promises and has been tested on Node 9.2. 
+This application makes use of the Readline module and Promises and has been tested on Node 9.2.
 
 *Confirm you are using the right version of Node if you experience errors with this application.*
 
@@ -20,7 +20,7 @@ This application makes use of the Readline module and Promises and has been test
 [San Fransisco Mobile Food Schedule API](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Schedule/jjew-r69b)<br>
 
 *Confirm api columns still match the query string in the file if you experience errors with this application.*
-## 
+##
 
 ### To Install
 
@@ -32,7 +32,8 @@ This application makes use of the Readline module and Promises and has been test
 ## To run
 1. Run `npm start`
 
+## Web Application Write Up
+Please see [Analysis.md](https://github.com/tehut/noms/blob/master/analysis.md) for a brief description of how this project might be transitioned to a web application.
 
 # Contact
 This application is not actively maintained, however issues may be submitted here on [Gihub](https://github.com/tehut/noms/issues)
-

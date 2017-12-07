@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/tehut/nom_finder.git"
+    "url": ""
   },
-  "author": "Tehut Getahun",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tehut/noms/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/tehut/noms#readme",
+  "homepage": "",
   "dependencies": {
     "chalk": "^2.3.0",
     "request": "^2.83.0",
