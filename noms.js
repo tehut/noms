@@ -1,13 +1,13 @@
-
-// depedencies(bluebird, request-promise, read-line module, Node 9.2, and chalk :D)
-// instantiating readline and request-promise packages
+// hardcoded API call information here for easy access
 const BASE_URL = "https://data.sfgov.org/resource/bbb8-hzi6.json";
 const HEADER_KEY = "X-App-Token:";
 const TOKEN_HEADER = "ITiPdCl7UNMsrqTgbRHz0J1x8";
+// instantiating chalk package and semantic sugar for colored conosle output
 const chalk = require("chalk");
 const log = console.log;
 const readline = require("readline");
 const request = require("request-promise");
+// Small set of global variables required by multiple functions
 let offset = 0;
 let truckValues = new Map();
 let nameArray = new Array();
@@ -26,6 +26,7 @@ function parseResponse (offset, nameArray, truckValues, data = null) {
       for (truck in data) {
         let name = data[truck].applicant;
         // scrub results for duplicates and whether they're open and push into nameArray
+        // make named object with data body, named for, well, name of course :-D
         if ( hour >= parseInt(data[truck].start24) &&
         hour <= parseInt(data[truck].end24) &&
         nameArray.includes(name)==false);
@@ -46,14 +47,17 @@ function parseResponse (offset, nameArray, truckValues, data = null) {
     let data = truckValues[name];
     let ord = i + 1;
     let indent = "    ";
+    
+    // colored console output should read:
+    // [Business Name]  Located at: [Location ]
+    //                  Open From:  [startime] -  [endtime]
     log(chalk.white(ord + ". "+ name + "\n" + indent + "Located at: "
     + truckValues[name]["location"] + ", SAN FRANSISCO, CA"))
 
-
-  log(chalk.white(indent + "Open from:  " + truckValues[name].starttime +
+    log(chalk.white(indent + "Open from:  " + truckValues[name].starttime +
     " - " + truckValues[name].endtime))
   }
-
+// handle end of list case
   if (limit !== nameArray.length) {
     log(chalk.white("\n Would you like to see 10 more food trucks?  y/n ?"));
   } else {
@@ -113,10 +117,12 @@ function getInput(map){
   rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout,
-    terminal: false
+    terminal: false,
   });
+  // begins stream
   rl.prompt();
-
+  
+// handles [Enter key]
   rl.on("line", function(line) {
     let answer = line.trim();
     if (answer === "n" || answer === "no" ||
@@ -135,7 +141,7 @@ function getInput(map){
       console.log("Ummmmmm, we're not sure what that means. Please reply with y/n")
     }
     rl.prompt();
-
+// handles ctrl + c
   }).on("close", function() {
     console.log("Have a great day!");
     process.exit(0);
@@ -144,12 +150,12 @@ function getInput(map){
 }
 
 function wrapCli(){
-  log(chalk.dim.rgb(200, 200, 100)("(_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_)"));
-  log(chalk.dim.rgb(0, 160, 160)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
-  log(chalk.dim.rgb(0, 160, 160)("Let's choose a meal! I hope you're hungry *"));
-  log(chalk.dim.rgb(0, 160, 160)("          * and in San Fransisco....  "));
-  log(chalk.dim.rgb(0, 160, 160)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
-  log(chalk.dim.rgb(200, 200, 100)("(_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_)"));
+  log(chalk.dim.rgb(100, 200, 100)("(_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_)"));
+  log(chalk.dim.rgb(0, 100, 50)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
+  log(chalk.dim.rgb(0, 100, 50)("Let's choose a meal! I hope you're hungry *"));
+  log(chalk.dim.rgb(0, 100, 50)("          * and in San Fransisco....  "));
+  log(chalk.dim.rgb(0, 100, 50)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
+  log(chalk.dim.rgb(100, 200, 100)("(_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_)"));
 
   callAPI();
 }

@@ -9,14 +9,17 @@ This project is not indented for deployment, the instructions below will get you
 ### Prerequistes
 Node 8.0 ^
 Node 9.2 (recommended)
-This application makes use of the Readline module and Promises and has been tested on Node 9.2. Confirm you are using the right version of Node if you experience errors with this application.
+This application makes use of the Readline module and Promises and has been tested on Node 9.2. 
+
+*Confirm you are using the right version of Node if you experience errors with this application.*
 
 ## Dependencies
-[chalk: "^2.3.0"](https://www.npmjs.com/package/chalk)
-[request-promise: ^4.2.2](https://www.npmjs.com/package/require-promise)
-[request: ^2.83.0](https://www.npmjs.com/package/require-promise)
-[San Fransisco Mobile Food Schedule API](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Schedule/jjew-r69b)
-*Confirm api columns have not changed and still match the query string in the file if you experience errors with this application*
+[chalk: ^2.3.0](https://www.npmjs.com/package/chalk) <br>
+[request-promise: ^4.2.2](https://www.npmjs.com/package/require-promise)<br>
+[request: ^2.83.0](https://www.npmjs.com/package/require-promise)<br>
+[San Fransisco Mobile Food Schedule API](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Schedule/jjew-r69b)<br>
+
+*Confirm api columns still match the query string in the file if you experience errors with this application.*
 ## 
 
 ### To Install
@@ -30,6 +33,6 @@ This application makes use of the Readline module and Promises and has been test
 1. Run `npm start`
 
 
-#Contact
-This application is actively maintained, but issues may be submitted here on [Gihub](https://github.com/tehut/noms/issues)
+# Contact
+This application is not actively maintained, however issues may be submitted here on [Gihub](https://github.com/tehut/noms/issues)
 
