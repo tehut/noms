@@ -4,7 +4,7 @@
   "description": "Lets find lunch",
   "main": "noms.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node noms.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +13,9 @@
   "author": "Tehut Getahun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tehut/nom_finder/issues"
+    "url": "https://github.com/tehut/noms/issues"
   },
-  "homepage": "https://github.com/tehut/nom_finder#readme",
+  "homepage": "https://github.com/tehut/noms#readme",
   "dependencies": {
     "chalk": "^2.3.0",
     "request": "^2.83.0",

@@ -145,10 +145,10 @@ function getInput(map){
 
 function wrapCli(){
   log(chalk.dim.rgb(200, 200, 100)("(_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_)"));
-  log(chalk.dim.rgb(10, 200, 200)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
-  log(chalk.dim.rgb(10, 200, 200)("Let's choose a meal! I hope you're hungry *"));
-  log(chalk.dim.rgb(10, 200, 200)("          * and in San Fransisco....  "));
-  log(chalk.dim.rgb(10, 200, 200)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
+  log(chalk.dim.rgb(0, 160, 160)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
+  log(chalk.dim.rgb(0, 160, 160)("Let's choose a meal! I hope you're hungry *"));
+  log(chalk.dim.rgb(0, 160, 160)("          * and in San Fransisco....  "));
+  log(chalk.dim.rgb(0, 160, 160)("nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm  nᗧm nᗣm   "));
   log(chalk.dim.rgb(200, 200, 100)("(_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_}{_)"));
 
   callAPI();

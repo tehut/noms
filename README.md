@@ -5,17 +5,19 @@ This is a single file command line application which queries the San Fransicso M
 
 This project is not indented for deployment, the instructions below will get you a copy of the project up and running on your local machine.
 
-### Prerequistes & Dependences
-# Prerequistes
+## Prerequistes & Dependences
+### Prerequistes
 Node 8.0 ^
 Node 9.2 (recommended)
-This application makes use of the Readline module and Promises and has been tested on Node 9.2. 
+This application makes use of the Readline module and Promises and has been tested on Node 9.2. Confirm you are using the right version of Node if you experience errors with this application.
 
-# Dependencies
+## Dependencies
 [chalk: "^2.3.0"](https://www.npmjs.com/package/chalk)
 [request-promise: ^4.2.2](https://www.npmjs.com/package/require-promise)
 [request: ^2.83.0](https://www.npmjs.com/package/require-promise)
-
+[San Fransisco Mobile Food Schedule API](https://data.sfgov.org/Economy-and-Community/Mobile-Food-Schedule/jjew-r69b)
+*Confirm api columns have not changed and still match the query string in the file if you experience errors with this application*
+## 
 
 ### To Install
 
