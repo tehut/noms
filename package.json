@@ -1,0 +1,24 @@
+{
+  "name": "nom_finder",
+  "version": "0.0.1",
+  "description": "Lets find lunch",
+  "main": "noms.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tehut/nom_finder.git"
+  },
+  "author": "Tehut Getahun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tehut/nom_finder/issues"
+  },
+  "homepage": "https://github.com/tehut/nom_finder#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
